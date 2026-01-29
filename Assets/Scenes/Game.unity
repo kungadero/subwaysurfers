@@ -608,11 +608,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062541822}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.46, z: -0.06722}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9.2041235, y: 2.8296, z: 2.8296}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 1179115680}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1179115679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179115680}
+  m_Layer: 0
+  m_Name: Plataform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1179115680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179115679}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.67, z: 3.33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1062541827}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1680378988
@@ -663,7 +695,19 @@ MonoBehaviour:
         m_CallState: 2
   onSwipeDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1864351530}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: MoveDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onSwipeLeft:
     m_PersistentCalls:
       m_Calls:
@@ -737,7 +781,7 @@ Transform:
   m_GameObject: {fileID: 1864351528}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -756,8 +800,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ef62f36bb2bfd4d80c5a48d317cd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
+  characterDatta: {fileID: 11400000, guid: e9dd5287bdafe6349bd4ea7edc67e73f, type: 2}
+  characterAnimator: {fileID: 685938974}
   jumpForce: 5
   distanceToMove: 2
+  moveDuration: 0.2
 --- !u!54 &1864351531
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -816,4 +863,4 @@ SceneRoots:
   - {fileID: 203844589}
   - {fileID: 1680378990}
   - {fileID: 1864351529}
-  - {fileID: 1062541827}
+  - {fileID: 1179115680}
