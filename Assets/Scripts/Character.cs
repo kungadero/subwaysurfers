@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Collections;
+using UnityEngine.Events;
 public class Character : MonoBehaviour
 {
     private Rigidbody characterRigidbody;
@@ -16,6 +17,12 @@ public class Character : MonoBehaviour
     private float moveDuration=0.2f;
     [SerializeField]
     private Transform characterStartPivot;
+    [SerializeField]
+    private UnityEvent onJump;
+    [SerializeField]
+    private UnityEvent onMoveToside;
+    [SerializeField]
+    private UnityEvent onRoll;
     private bool isGrounded = true;
     private bool isMoving = false;
     private bool isRolling = false;
@@ -44,6 +51,7 @@ public class Character : MonoBehaviour
         if (!isActive) return;
         if (isGrounded)
         {
+            onJump?.Invoke();
             characterAnimator.Play(characterDatta.jumpAnimationName, 0, 0f);
             characterRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
@@ -58,6 +66,7 @@ public class Character : MonoBehaviour
             characterRigidbody.AddForce(Vector3.down * jumpForce * 2, ForceMode.Impulse);
         }
         characterAnimator.Play(characterDatta.rollAnimationName, 0 , 0f);
+        onRoll?.Invoke();
         isRolling = true;
         StartCoroutine(ResetRoll());
     }
@@ -75,6 +84,7 @@ public class Character : MonoBehaviour
     private void Move(Vector3 direction)
     {
         if (isMoving || !isActive) return;
+        onMoveToside?.Invoke();
         characterAnimator.Play(characterDatta.moveAnimationName, 0, 0f);
         isMoving = true;
         Vector3 targetPosition = transform.position + direction * distanceToMove;
