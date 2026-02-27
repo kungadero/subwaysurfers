@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlatformesManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlatformesManager : MonoBehaviour
     private int initialPlatforms = 5;
     [SerializeField]
     private float speed = 5f;
+    [SerializeField]
+    private UnityEvent<Platform> onPlatformPassed;
     private bool isRunning = true;
     private GameObject lastPlatform;
     private int platformsInstantiated = 0;
@@ -59,6 +62,7 @@ public class PlatformesManager : MonoBehaviour
             newPlatform.transform.SetParent(transform);
             newPlatform.transform.localPosition = spawnPosition + newPlatform.GetComponent<Collider>().bounds.size.z * Vector3.forward * 0.5f;
             lastPlatform = newPlatform;
+            onPlatformPassed?.Invoke(newPlatform.GetComponent<Platform>());
             }
     }
     private void Update()

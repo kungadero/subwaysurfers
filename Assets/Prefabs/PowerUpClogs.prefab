@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8510604650223958728}
   - component: {fileID: 6183266046922327775}
   - component: {fileID: 4455446333950518557}
+  - component: {fileID: 8601848145552217103}
   m_Layer: 0
   m_Name: PowerUpClogs
   m_TagString: JumpPowerUp
@@ -72,6 +73,19 @@ MonoBehaviour:
   duration: 5
   boots: []
   character: {fileID: 0}
+--- !u!114 &8601848145552217103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5084966568407528854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ac46a6fab03fe4b87698e597e36a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rotate
+  rotationSpeed: {x: 0, y: 75, z: 0}
 --- !u!1001 &2799235163884071697
 PrefabInstance:
   m_ObjectHideFlags: 0
