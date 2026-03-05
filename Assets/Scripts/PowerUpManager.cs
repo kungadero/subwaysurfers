@@ -35,7 +35,7 @@ public class PowerUpManager : MonoBehaviour
         InstantiatePoolObjects pool = powerUpPools[Random.Range(0, powerUpPools.Length)];
         pool.InstantiateObject(Vector3.zero);
         GameObject powerUp = pool.GetCurrentObject();
-        powerUp.transform.localPosition += Vector3.up * powerUpOffset;
         platform.AddPowerUp(powerUp);
+        powerUp.transform.localPosition += Vector3.up * powerUpOffset;
     }
 }
