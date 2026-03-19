@@ -1463,12 +1463,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925893723}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5083, y: 0, z: 0.82122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1843470304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954420826
 GameObject:
@@ -1693,7 +1693,7 @@ Transform:
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
   m_LocalRotation: {x: 0.079201914, y: -0, z: -0, w: 0.9968586}
-  m_LocalPosition: {x: 0, y: 4.85, z: -6.21}
+  m_LocalPosition: {x: 0, y: 4.23, z: -6.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1713,6 +1713,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 1864351529}
   smoothSpeed: 0.125
+  minX: -0.5
+  maxX: 0.5
+  verticalThreshold: 2
+  verticalSmoothSpeed: 5
 --- !u!1 &998589939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,6 +2217,7 @@ MonoBehaviour:
   - {fileID: 1024236406}
   - {fileID: 1312831631}
   securePlatformPrefabs:
+  - {fileID: 1843470303}
   - {fileID: 1843470303}
   initialPlatforms: 6
   speed: 6
@@ -3074,7 +3079,8 @@ Transform:
   m_LocalPosition: {x: 3.5083, y: 0, z: -0.82122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 925893726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1843470305
@@ -3813,7 +3819,6 @@ SceneRoots:
   - {fileID: 196548614}
   - {fileID: 998589940}
   - {fileID: 1848891957}
-  - {fileID: 925893726}
   - {fileID: 1529889578}
   - {fileID: 440097003}
   - {fileID: 1843470304}
