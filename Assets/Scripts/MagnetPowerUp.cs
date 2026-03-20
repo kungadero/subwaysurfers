@@ -9,16 +9,30 @@ public class MagnetPowerUp : MonoBehaviour
     private float duration = 5f;
     [SerializeField]
     private Collider magnetCollider;
+    private Coroutine deactivateCoruotine;
     public void Active()
     {
         magnet.SetActive(true);
         magnetCollider.enabled = true;
-        StartCoroutine(DeactivateAfterDuration());
+        if (deactivateCoruotine != null)
+        {
+            StopCoroutine(deactivateCoruotine);
+        }
+        deactivateCoruotine= StartCoroutine(DeactivateAfterDuration());
     }
-    private IEnumerator DeactivateAfterDuration()
+    public void Deactivate()
+    {
+        if (deactivateCoruotine != null)
+        {
+            StopCoroutine(deactivateCoruotine);
+            deactivateCoruotine = null;
+        }
+        magnet.SetActive (false);
+        magnetCollider.enabled = false;
+    }
+        private IEnumerator DeactivateAfterDuration()
     {
         yield return new WaitForSeconds(duration);
-        magnet.SetActive(false);
-        magnetCollider.enabled = false;
+        Deactivate();
     }
 }
