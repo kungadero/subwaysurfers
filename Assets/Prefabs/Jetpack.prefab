@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5306539235066085349}
   m_Layer: 0
   m_Name: Jetpack
-  m_TagString: JetPack
+  m_TagString: Jetpack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,12 +49,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.7290038, y: 2.0188866, z: 1}
-  m_Center: {x: -0.005821705, y: 0.54259896, z: 0}
+  m_Size: {x: 1.2264519, y: 2.3918042, z: 1.1248456}
+  m_Center: {x: -0.008122057, y: 0.35614014, z: 0.013512671}
 --- !u!114 &5306539235066085349
 MonoBehaviour:
   m_ObjectHideFlags: 0

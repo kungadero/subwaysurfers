@@ -300,6 +300,18 @@ MonoBehaviour:
           m_StringArgument: chase
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1977005356}
+        m_TargetAssemblyTypeName: JetPackPowerUp, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: chase
+          m_BoolArgument: 1
+        m_CallState: 2
   onGameLose:
     m_PersistentCalls:
       m_Calls:
@@ -513,6 +525,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 814498517}
+  - {fileID: 1816058330}
   - {fileID: 1312831632}
   - {fileID: 826588111}
   - {fileID: 706057335}
@@ -1692,6 +1705,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a665c53c87f9844458db8f58bcf19e1c, type: 3}
   m_PrefabInstance: {fileID: 951763001}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &951763003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a665c53c87f9844458db8f58bcf19e1c, type: 3}
+  m_PrefabInstance: {fileID: 951763001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &954420826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8764043878647920493, guid: c4ed38c72957f2241ad144a1614956d9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8767152486562788127, guid: c4ed38c72957f2241ad144a1614956d9, type: 3}
       propertyPath: m_LocalScale.x
@@ -2534,6 +2552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right clog
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1c62eef67a3a762428a6c8718ba030d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2605,7 +2627,9 @@ MonoBehaviour:
   securePlatformPrefabs:
   - {fileID: 1843470303}
   - {fileID: 1843470303}
-  initialPlatforms: 6
+  flyingPlatformPrefabs:
+  - {fileID: 1816058329}
+  flyingPlatformsHeight: 4.5
   minSpeed: 5
   maxSpeed: 12
   acceleration: 0.1
@@ -2888,9 +2912,9 @@ MonoBehaviour:
   minPlatformsNumber: 5
   maxPlatformsNumber: 7
   powerUpPools:
-  - {fileID: 361497846}
-  - {fileID: 1556614005}
   - {fileID: 1625173941}
+  - {fileID: 1556614005}
+  - {fileID: 361497846}
   powerUpOffset: 0.5
 --- !u!4 &1367991212
 Transform:
@@ -3475,6 +3499,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 351048925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1816058328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1816058330}
+  - component: {fileID: 1816058329}
+  m_Layer: 0
+  m_Name: InstancePlatformfly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1816058329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816058328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e41a0b9dff0a04dbdc7c140de31bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 230493143588401494, guid: 5743f6bd27eaae24c8f0b4574546737e, type: 3}
+--- !u!4 &1816058330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816058328}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.26828, y: -1.03866, z: -3.48001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 351048925}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1843470302
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,6 +3920,22 @@ MonoBehaviour:
   obstacleTag: Obstacle
   coinTag: Coin
   jumpPowerUpTag: JumpPowerUp
+  jetpackTag: Jetpack
+  onJetpackCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977005356}
+        m_TargetAssemblyTypeName: JetPackPowerUp, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onMagnetCollected:
     m_PersistentCalls:
       m_Calls:
@@ -4150,6 +4235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1977005355}
+  - component: {fileID: 1977005356}
   m_Layer: 0
   m_Name: 'JetpackPowerUp '
   m_TagString: Untagged
@@ -4172,6 +4258,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 980062610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1977005356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977005354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bbd42d5a274ba4f88789b0baf9df97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JetPackPowerUp
+  flyingHeight: 4.5
+  character: {fileID: 1864351530}
+  jetPackAsset: {fileID: 951763003}
+  flyDuration: 5
+  onJetPackActivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1242637486}
+        m_TargetAssemblyTypeName: PlatformesManager, Assembly-CSharp
+        m_MethodName: InstantiateFlyingPlatform
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1864351529}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2047947327
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,6 +4456,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1c62eef67a3a762428a6c8718ba030d7, type: 3}
       propertyPath: m_Name
       value: Left clog
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1c62eef67a3a762428a6c8718ba030d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

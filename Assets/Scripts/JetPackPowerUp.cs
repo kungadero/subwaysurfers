@@ -22,7 +22,7 @@ public class JetPackPowerUp : MonoBehaviour
     }
     public void Activate()
     {
-        if (character.IsActive || character.IsFlying) return;
+        if (!character.IsActive || character.IsFlying) return;
         character.IsFlying = true;
         jetPackAsset.SetActive(true);
         onJetPackActivated?.Invoke();

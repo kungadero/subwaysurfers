@@ -10,7 +10,7 @@ TagManager:
   - JumpPowerUp
   - Magnet
   - FxTemporaire
-  - JetPack
+  - Jetpack
   layers:
   - Default
   - TransparentFX

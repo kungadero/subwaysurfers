@@ -10,6 +10,9 @@ public class PlatformesManager : MonoBehaviour
     [SerializeField]
     private InstantiatePoolObjects[] securePlatformPrefabs;
     [SerializeField]
+    private InstantiatePoolObjects[] flyingPlatformPrefabs;
+    [SerializeField]
+    private float flyingPlatformsHeight = 4.5f;
     private int initialPlatforms = 5;
     [SerializeField]
     private float minSpeed = 5f;
@@ -43,6 +46,16 @@ public class PlatformesManager : MonoBehaviour
         {
             securePlatform.DeactivateAllObjects();
         }
+    }
+    public void InstantiateFlyingPlatform(Transform character)
+    {
+        InstantiatePoolObjects instatiatePool= flyingPlatformPrefabs[Random.Range(0, flyingPlatformPrefabs.Length)];
+        Vector3 spawnPosition = character.position - transform.position + Vector3.forward * 2f;
+        instatiatePool.InstantiateObject(spawnPosition);
+        GameObject createdPlatform = instatiatePool.GetCurrentObject();
+        Platform newPlatform = createdPlatform.GetComponent<Platform>();
+        newPlatform.transform.SetParent(transform);
+        newPlatform.transform.localPosition = spawnPosition + newPlatform.ColliderSize * Vector3.forward + Vector3.up * flyingPlatformsHeight;
     }
     public void InstantiatePlatform(int number)
     {
