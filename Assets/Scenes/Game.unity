@@ -2361,7 +2361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 0.19215687}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2752,7 +2752,6 @@ Transform:
   - {fileID: 361497847}
   - {fileID: 748036286}
   - {fileID: 1977005355}
-  - {fileID: 1843470304}
   - {fileID: 1556614006}
   - {fileID: 1625173940}
   m_Father: {fileID: 0}
@@ -3780,6 +3779,7 @@ MonoBehaviour:
   - {fileID: 1843470303}
   flyingPlatformPrefabs:
   - {fileID: 1816058329}
+  - {fileID: 1669837303}
   flyingPlatformsHeight: 4.5
   minSpeed: 5
   maxSpeed: 12
@@ -5199,12 +5199,12 @@ Transform:
   m_GameObject: {fileID: 1843470302}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.89396, y: -0.77164, z: -0.503}
+  m_LocalPosition: {x: 3.5083, y: 0, z: -0.82122004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 925893726}
-  m_Father: {fileID: 980062610}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1843470305
 MonoBehaviour:
@@ -5893,7 +5893,7 @@ GameObject:
   - component: {fileID: 1977005356}
   m_Layer: 0
   m_Name: 'JetpackPowerUp '
-  m_TagString: Untagged
+  m_TagString: Jetpack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6416,4 +6416,5 @@ SceneRoots:
   - {fileID: 2047947331}
   - {fileID: 980062610}
   - {fileID: 929579274}
+  - {fileID: 1843470304}
   - {fileID: 1311524085}
